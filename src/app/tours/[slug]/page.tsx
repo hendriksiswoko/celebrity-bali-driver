@@ -6,6 +6,8 @@ import { ContentImagePlaceholder } from "@/components/ui/ContentImage";
 import { formatPrice, isPricePlaceholder } from "@/lib/format";
 import { buildWhatsappLink } from "@/lib/whatsapp";
 
+const PLACEHOLDER = "[CLIENT CONFIRMATION REQUIRED]";
+
 export function generateStaticParams() {
   return tours.map((t) => ({ slug: t.slug }));
 }
@@ -31,6 +33,10 @@ export default async function TourDetailPage({
 
   const whatsappLink = buildWhatsappLink(`Hi, I'd like to book the ${tour.title}.`);
   const gallery = [tour.coverImage, ...tour.gallery];
+  const hasDuration = tour.duration && tour.duration !== PLACEHOLDER;
+  const included = tour.included.filter((item) => item !== PLACEHOLDER);
+  const excluded = tour.excluded.filter((item) => item !== PLACEHOLDER);
+  const itinerary = tour.itinerary?.filter((item) => item.activity !== PLACEHOLDER) ?? null;
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
@@ -51,47 +57,70 @@ export default async function TourDetailPage({
       <div className="mt-10 grid gap-10 md:grid-cols-3">
         <div className="md:col-span-2">
           <h1 className="text-3xl font-bold text-brand-900">{tour.title}</h1>
-          <p className="mt-4 text-brand-800">{tour.description}</p>
+          <p className="mt-4 text-lg leading-relaxed text-brand-800">{tour.description}</p>
 
-          <h2 className="mt-8 text-lg font-semibold text-brand-900">Itinerary</h2>
-          {tour.itinerary === null ? (
-            <p className="mt-2 text-sm text-stone-400">[CLIENT CONFIRMATION REQUIRED]</p>
-          ) : (
-            <ol className="mt-2 space-y-2 text-brand-800">
-              {tour.itinerary.map((item, i) => (
-                <li key={i} className="flex gap-3">
-                  {item.time && <span className="w-16 shrink-0 font-medium text-brand-700">{item.time}</span>}
-                  <span>{item.activity}</span>
-                </li>
-              ))}
-            </ol>
+          {itinerary && itinerary.length > 0 && (
+            <>
+              <h2 className="mt-10 text-xl font-bold text-brand-900">Itinerary</h2>
+              <ol className="mt-4 space-y-3">
+                {itinerary.map((item, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-100 text-xs font-bold text-brand-700">
+                      {i + 1}
+                    </span>
+                    <span className="pt-0.5 text-brand-800">
+                      {item.time && <span className="mr-2 font-semibold text-brand-700">{item.time}</span>}
+                      {item.activity}
+                    </span>
+                  </li>
+                ))}
+              </ol>
+            </>
           )}
 
-          <div className="mt-8 grid gap-6 sm:grid-cols-2">
-            <div>
-              <h3 className="font-semibold text-brand-900">Included</h3>
-              <ul className="mt-2 list-inside list-disc text-brand-800">
-                {tour.included.map((item, i) => (
-                  <li key={i}>{item}</li>
-                ))}
-              </ul>
+          {(included.length > 0 || excluded.length > 0) && (
+            <div className="mt-10 grid gap-6 sm:grid-cols-2">
+              {included.length > 0 && (
+                <div>
+                  <h3 className="font-bold text-brand-900">Included</h3>
+                  <ul className="mt-3 space-y-2">
+                    {included.map((item, i) => (
+                      <li key={i} className="flex items-start gap-2 text-brand-800">
+                        <span className="mt-1 text-accent-600">✓</span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+              {excluded.length > 0 && (
+                <div>
+                  <h3 className="font-bold text-brand-900">Excluded</h3>
+                  <ul className="mt-3 space-y-2">
+                    {excluded.map((item, i) => (
+                      <li key={i} className="flex items-start gap-2 text-brand-600">
+                        <span className="mt-1 text-brand-300">✕</span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </div>
-            <div>
-              <h3 className="font-semibold text-brand-900">Excluded</h3>
-              <ul className="mt-2 list-inside list-disc text-brand-800">
-                {tour.excluded.map((item, i) => (
-                  <li key={i}>{item}</li>
-                ))}
-              </ul>
-            </div>
-          </div>
+          )}
         </div>
 
         <div className="h-fit rounded-2xl border border-brand-100 bg-white p-6 shadow-sm">
-          <p className="text-sm text-brand-700">Duration</p>
-          <p className="font-semibold text-brand-900">{tour.duration}</p>
-          <p className="mt-4 text-sm text-brand-700">Price</p>
-          <p className={`text-xl font-semibold ${isPricePlaceholder(tour.price) ? "text-stone-400" : "text-accent-600"}`}>
+          {hasDuration && (
+            <>
+              <p className="text-sm font-medium text-brand-600">Duration</p>
+              <p className="font-semibold text-brand-900">{tour.duration}</p>
+            </>
+          )}
+          <p className={`text-sm font-medium text-brand-600 ${hasDuration ? "mt-4" : ""}`}>
+            {tour.priceNote ? "Starting from" : "Price"}
+          </p>
+          <p className={`text-2xl font-bold ${isPricePlaceholder(tour.price) ? "text-stone-400" : "text-accent-600"}`}>
             {formatPrice(tour.price)}
           </p>
           {tour.priceNote && <p className="text-sm text-brand-600">{tour.priceNote}</p>}
