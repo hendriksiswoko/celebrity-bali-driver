@@ -33,9 +33,9 @@ export const services: Service[] = [
         src: "/images/airport-transfer/airport-transfer-car.webp",
         alt: "Celebrity Bali Driver airport transfer fleet lineup",
       },
-      { alt: "Airport pickup" },
-      { alt: "Airport arrival" },
-      { alt: "Airport meeting point" },
+      { src: "/images/airport-transfer/airport-pickup.webp", alt: "Guests picked up at the airport with a welcome sign" },
+      { src: "/images/airport-transfer/airport-arrival.webp", alt: "Guests arriving in Bali, greeted at the airport" },
+      { src: "/images/airport-transfer/airport-meeting-point.webp", alt: "Guests meeting their driver at the airport" },
     ],
   },
   {
