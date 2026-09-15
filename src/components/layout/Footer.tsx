@@ -16,10 +16,10 @@ export function Footer() {
       <div className="mx-auto grid max-w-6xl gap-8 px-4 py-12 sm:px-6 md:grid-cols-3">
         <div>
           <ContentImagePlaceholder
-            image={siteConfig.brand.logo}
-            width={1044}
-            height={479}
-            className="h-10 w-auto object-contain"
+            image={siteConfig.brand.logoDark ?? siteConfig.brand.logo}
+            width={800}
+            height={800}
+            className="h-16 w-16 object-contain"
           />
           <p className="mt-3 text-sm text-white/70">{siteConfig.brand.tagline}</p>
         </div>

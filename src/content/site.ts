@@ -11,6 +11,8 @@ export const siteConfig: SiteConfig = {
     name: "Celebrity Bali Driver",
     tagline: "Make your trip to Bali a breeze with our safe and reliable car rental and driver services",
     logo: { src: "/images/brand/logo.png", alt: "Celebrity Bali Driver logo" },
+    // Round "Celebrity Team" badge variant, used on dark backgrounds like the footer.
+    logoDark: { src: "/images/brand/celebrity-team-badge.webp", alt: "Celebrity Bali Driver team badge" },
     favicon: { src: "/images/brand/logo.png", alt: "Celebrity Bali Driver favicon" },
     socialShareImage: { alt: "Celebrity Bali Driver" },
   },
