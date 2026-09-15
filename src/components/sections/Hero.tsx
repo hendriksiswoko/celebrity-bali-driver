@@ -7,14 +7,17 @@ export function Hero() {
   return (
     <section className="relative flex min-h-[70vh] items-center overflow-hidden bg-brand-900">
       <HeroCarousel slides={heroImages.slides} />
-      <div className="absolute inset-0 bg-gradient-to-t from-brand-900 via-brand-900/60 to-brand-900/20" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/35 to-black/10" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
 
       <div className="relative mx-auto max-w-6xl px-4 py-24 sm:px-6">
-        <p className="text-sm font-semibold uppercase tracking-widest text-accent-300">Bali, Indonesia</p>
-        <h1 className="mt-4 max-w-2xl text-4xl font-bold text-white sm:text-5xl">
+        <p className="text-sm font-semibold uppercase tracking-widest text-accent-300 drop-shadow-md">
+          Bali, Indonesia
+        </p>
+        <h1 className="mt-4 max-w-2xl text-4xl font-bold text-white drop-shadow-lg sm:text-5xl">
           {siteConfig.brand.name}
         </h1>
-        <p className="mt-4 max-w-xl text-lg text-brand-100">{siteConfig.brand.tagline}</p>
+        <p className="mt-4 max-w-xl text-lg text-brand-100 drop-shadow-md">{siteConfig.brand.tagline}</p>
 
         <div className="mt-8 flex flex-wrap gap-4">
           <Link

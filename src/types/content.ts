@@ -12,6 +12,8 @@ export interface ContentImage {
   src?: string;
   /** Required accessible description. For missing images, describe what should be there. */
   alt: string;
+  /** CSS object-position, e.g. "50% 20%", for when object-cover crops the subject awkwardly. */
+  focalPoint?: string;
 }
 
 export type Currency = "USD" | "IDR";

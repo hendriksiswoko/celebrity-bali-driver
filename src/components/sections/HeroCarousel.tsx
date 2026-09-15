@@ -27,12 +27,7 @@ export function HeroCarousel({ slides }: { slides: ContentImage[] }) {
           style={{ opacity: i === activeIndex ? 1 : 0 }}
           aria-hidden={i !== activeIndex}
         >
-          <ContentImagePlaceholder
-            image={slide}
-            fill
-            priority={i === 0}
-            className="object-cover opacity-70"
-          />
+          <ContentImagePlaceholder image={slide} fill priority={i === 0} className="object-cover" />
         </div>
       ))}
     </div>

@@ -44,10 +44,19 @@ export function ContentImagePlaceholder({
   }
 
   const src = withBasePath(image.src);
+  const style = image.focalPoint ? { objectPosition: image.focalPoint } : undefined;
 
   if (fill) {
     return (
-      <Image src={src} alt={image.alt} fill sizes={sizes} priority={priority} className={className} />
+      <Image
+        src={src}
+        alt={image.alt}
+        fill
+        sizes={sizes}
+        priority={priority}
+        className={className}
+        style={style}
+      />
     );
   }
 
