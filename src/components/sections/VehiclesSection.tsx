@@ -16,7 +16,7 @@ export function VehiclesSection({ limit }: { limit?: number }) {
         </Link>
       }
     >
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4">
         {list.map((vehicle) => (
           <VehicleCard key={vehicle.slug} vehicle={vehicle} />
         ))}

@@ -75,6 +75,8 @@ export interface Driver {
   /** Folder name under /public/images/drivers/<imageFolder>/ */
   imageFolder: string;
   name: string;
+  /** Display format, e.g. "+62 812-3806-0514". */
+  phone?: string;
   bio: string;
   languages: string[];
   images: ContentImage[];

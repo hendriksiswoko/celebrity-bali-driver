@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { siteConfig } from "@/content/site";
 import { ContentImagePlaceholder } from "@/components/ui/ContentImage";
+import { MobileNav } from "@/components/layout/MobileNav";
 
 const NAV_LINKS = [
   { href: "/services/airport-transfer", label: "Airport Transfer" },
@@ -14,16 +15,20 @@ const NAV_LINKS = [
 export function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-brand-100 bg-background/95 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
-        <Link href="/" className="flex items-center">
-          <ContentImagePlaceholder
-            image={siteConfig.brand.logo}
-            width={1044}
-            height={479}
-            className="h-9 w-auto object-contain sm:h-10"
-          />
-          <span className="sr-only">{siteConfig.brand.name}</span>
-        </Link>
+      <div className="relative mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
+        <div className="flex items-center gap-2">
+          <MobileNav links={NAV_LINKS} />
+
+          <Link href="/" className="flex items-center">
+            <ContentImagePlaceholder
+              image={siteConfig.brand.logo}
+              width={1044}
+              height={479}
+              className="h-9 w-auto object-contain sm:h-10"
+            />
+            <span className="sr-only">{siteConfig.brand.name}</span>
+          </Link>
+        </div>
 
         <nav className="hidden items-center gap-6 text-sm font-medium text-brand-900/80 md:flex">
           {NAV_LINKS.map((link) => (

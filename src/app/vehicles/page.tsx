@@ -11,7 +11,7 @@ export default function VehiclesPage() {
       <p className="mt-2 max-w-2xl text-brand-700">
         Choose the vehicle that best fits your group size and travel style.
       </p>
-      <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mt-10 grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4">
         {vehicles.map((vehicle) => (
           <VehicleCard key={vehicle.slug} vehicle={vehicle} />
         ))}
