@@ -47,7 +47,7 @@ export const services: Service[] = [
     price: { amount: PRICE_PLACEHOLDER, currency: "USD" },
     primaryVehicleSlug: "toyota-alphard",
     images: [
-      { alt: "Toyota Alphard airport transfer" },
+      { src: "/images/luxury-airport-transfer/alphard-airport.webp", alt: "Toyota Alphard airport transfer" },
       { alt: "Luxury airport transfer" },
       { alt: "Toyota Alphard arrival" },
     ],
@@ -60,8 +60,8 @@ export const services: Service[] = [
       "Explore Bali at your own pace with a private car and driver for the day. Design your own route, stop wherever catches your eye, and skip the fixed schedules of a group tour — just you, your group, and the island ahead.",
     price: { amount: PRICE_PLACEHOLDER, currency: "USD" },
     images: [
-      { alt: "Private driver in Bali" },
-      { alt: "Car charter in Bali" },
+      { src: "/images/car-charter/private-driver-bali.webp", alt: "Private driver in Bali" },
+      { src: "/images/car-charter/car-charter-bali.webp", alt: "Scenic road through Bali's rice terraces" },
       { alt: "Daily driver service" },
     ],
   },
