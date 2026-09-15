@@ -14,7 +14,7 @@ const NAV_LINKS = [
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-40 border-b border-brand-100 bg-background/95 backdrop-blur">
+    <header className="sticky top-0 z-40 border-b border-white/10 bg-brand-900/95 backdrop-blur">
       <div className="relative mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
         <div className="flex items-center gap-2">
           <MobileNav links={NAV_LINKS} />
@@ -30,9 +30,9 @@ export function Header() {
           </Link>
         </div>
 
-        <nav className="hidden items-center gap-6 text-sm font-medium text-brand-900/80 md:flex">
+        <nav className="hidden items-center gap-6 text-sm font-medium text-white/70 md:flex">
           {NAV_LINKS.map((link) => (
-            <Link key={link.href} href={link.href} className="transition-colors hover:text-brand-700">
+            <Link key={link.href} href={link.href} className="transition-colors hover:text-white">
               {link.label}
             </Link>
           ))}
@@ -40,7 +40,7 @@ export function Header() {
 
         <Link
           href="/contact"
-          className="rounded-full bg-brand-700 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-brand-600"
+          className="rounded-full bg-accent-500 px-4 py-2 text-sm font-semibold text-brand-900 transition-colors hover:bg-accent-300"
         >
           Book Now
         </Link>
