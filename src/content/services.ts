@@ -29,9 +29,12 @@ export const services: Service[] = [
       { destination: "Lovina", price: { amount: "950,000", currency: "IDR" } },
     ],
     images: [
+      {
+        src: "/images/airport-transfer/airport-transfer-car.webp",
+        alt: "Celebrity Bali Driver airport transfer fleet lineup",
+      },
       { alt: "Airport pickup" },
       { alt: "Airport arrival" },
-      { alt: "Airport transfer car" },
       { alt: "Airport meeting point" },
     ],
   },
