@@ -62,10 +62,33 @@ export default async function ServiceDetailPage({
               Primary vehicle: {primaryVehicle.name} →
             </Link>
           )}
+
+          {service.priceList && (
+            <div className="mt-8">
+              <h2 className="text-lg font-semibold text-brand-900">Price by Destination</h2>
+              <div className="mt-3 overflow-hidden rounded-xl border border-brand-100">
+                <table className="w-full text-sm">
+                  <tbody>
+                    {service.priceList.map((item, i) => (
+                      <tr
+                        key={item.destination}
+                        className={i % 2 === 0 ? "bg-white" : "bg-brand-50/60"}
+                      >
+                        <td className="px-4 py-2.5 font-medium text-brand-900">{item.destination}</td>
+                        <td className="px-4 py-2.5 text-right font-semibold text-accent-600">
+                          {formatPrice(item.price)}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          )}
         </div>
 
         <div className="h-fit rounded-2xl border border-brand-100 bg-white p-6 shadow-sm">
-          <p className="text-sm text-brand-700">Price</p>
+          <p className="text-sm text-brand-700">{service.priceList ? "Starting from" : "Price"}</p>
           <p className={`text-xl font-semibold ${isPricePlaceholder(service.price) ? "text-stone-400" : "text-accent-600"}`}>
             {formatPrice(service.price)}
           </p>

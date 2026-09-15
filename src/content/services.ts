@@ -12,7 +12,22 @@ export const services: Service[] = [
     title: "Airport Transfer",
     description:
       "Start and end your trip stress-free with a private airport transfer. Your driver tracks your flight, meets you at arrivals, and takes you straight to your hotel or villa — no queuing for taxis, no haggling over fares.",
-    price: { amount: PRICE_PLACEHOLDER, currency: "USD" },
+    price: { amount: "200,000", currency: "IDR" },
+    priceList: [
+      { destination: "Kuta", price: { amount: "200,000", currency: "IDR" } },
+      { destination: "Legian", price: { amount: "250,000", currency: "IDR" } },
+      { destination: "Sanur", price: { amount: "300,000", currency: "IDR" } },
+      { destination: "Nusa Dua", price: { amount: "300,000", currency: "IDR" } },
+      { destination: "Seminyak", price: { amount: "300,000", currency: "IDR" } },
+      { destination: "Kerobokan", price: { amount: "350,000", currency: "IDR" } },
+      { destination: "Canggu", price: { amount: "400,000", currency: "IDR" } },
+      { destination: "Uluwatu", price: { amount: "400,000", currency: "IDR" } },
+      { destination: "Ubud", price: { amount: "450,000", currency: "IDR" } },
+      { destination: "Padang Bai", price: { amount: "600,000", currency: "IDR" } },
+      { destination: "Amed", price: { amount: "800,000", currency: "IDR" } },
+      { destination: "Medewi", price: { amount: "900,000", currency: "IDR" } },
+      { destination: "Lovina", price: { amount: "950,000", currency: "IDR" } },
+    ],
     images: [
       { alt: "Airport pickup" },
       { alt: "Airport arrival" },

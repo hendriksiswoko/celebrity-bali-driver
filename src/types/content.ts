@@ -61,13 +61,21 @@ export interface Tour {
   excluded: string[];
 }
 
+export interface ServicePriceListItem {
+  destination: string;
+  price: Price;
+}
+
 export interface Service {
   slug: string;
   /** Folder name under /public/images/<imageFolder>/ */
   imageFolder: string;
   title: string;
   description: string;
+  /** Headline price shown on cards, e.g. the lowest price in `priceList`. */
   price: Price;
+  /** Per-destination pricing (e.g. airport transfer by area) — renders as a table when present. */
+  priceList?: ServicePriceListItem[];
   images: ContentImage[];
   primaryVehicleSlug?: string;
 }
