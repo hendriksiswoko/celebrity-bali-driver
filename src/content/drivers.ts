@@ -21,7 +21,7 @@ export const drivers: Driver[] = [
     name: "Gusmang",
     phone: "+62 815-2992-7926",
     bio: "Friendly and easygoing behind the wheel, Gusmang keeps every trip comfortable and safe — a familiar face on the Celebrity Bali Driver team.",
-    languages: ["Bahasa Indonesia"],
+    languages: ["English", "Bahasa Indonesia"],
     images: [{ src: "/images/drivers/gusmang/portrait.webp", alt: "Gusmang — portrait" }],
   },
   {
@@ -30,7 +30,7 @@ export const drivers: Driver[] = [
     name: "Jeremy",
     phone: "+62 895-3600-68148",
     bio: "Safe trip, happy guest — that's Jeremy's motto, and it shows in every ride he drives across the island.",
-    languages: ["Bahasa Indonesia"],
+    languages: ["English", "Bahasa Indonesia"],
     images: [{ src: "/images/drivers/jeremy/portrait.webp", alt: "Jeremy — portrait" }],
   },
   {
@@ -39,7 +39,7 @@ export const drivers: Driver[] = [
     name: "Gusde",
     phone: "+62 813-5357-4577",
     bio: "Calm and attentive on the road, Gusde is all about a comfortable trip and a happy customer at the end of it.",
-    languages: ["Bahasa Indonesia"],
+    languages: ["English", "Bahasa Indonesia"],
     images: [{ src: "/images/drivers/gusde/portrait.webp", alt: "Gusde — portrait" }],
   },
   {
@@ -48,7 +48,7 @@ export const drivers: Driver[] = [
     name: "Ngurah",
     phone: "+62 887-0778-6879",
     bio: "Ngurah handles the bigger group trips with ease, keeping things safe and comfortable from door to door.",
-    languages: ["Bahasa Indonesia"],
+    languages: ["English", "Bahasa Indonesia"],
     images: [{ src: "/images/drivers/ngurah/portrait.webp", alt: "Ngurah — portrait" }],
   },
   {
@@ -57,7 +57,7 @@ export const drivers: Driver[] = [
     name: "Mr Gede",
     phone: "+62 878-6240-5475",
     bio: "With years on Bali's roads, Mr Gede offers a steady, professional driving experience guests trust.",
-    languages: ["Bahasa Indonesia"],
+    languages: ["English", "Bahasa Indonesia"],
     images: [{ src: "/images/drivers/gede/portrait.webp", alt: "Mr Gede — portrait" }],
   },
   {
@@ -66,7 +66,7 @@ export const drivers: Driver[] = [
     name: "Mr Nyoman",
     phone: "+62 878-6240-9998",
     bio: "Mr Nyoman is known for safe, comfortable trips and a genuinely warm welcome for every guest.",
-    languages: ["Bahasa Indonesia"],
+    languages: ["English", "Bahasa Indonesia"],
     images: [{ src: "/images/drivers/nyoman/portrait.webp", alt: "Mr Nyoman — portrait" }],
   },
   {
@@ -75,7 +75,7 @@ export const drivers: Driver[] = [
     name: "Helmi",
     phone: "+62 851-8688-8378",
     bio: "A professional driver focused on a comfortable, safe journey and the best service in Bali.",
-    languages: ["Bahasa Indonesia"],
+    languages: ["English", "Bahasa Indonesia"],
     images: [{ src: "/images/drivers/helmi/portrait.webp", alt: "Helmi — portrait" }],
   },
   {
@@ -84,7 +84,7 @@ export const drivers: Driver[] = [
     name: "Alan",
     phone: "+62 812-2713-2028",
     bio: "Alan specializes in VVIP transfers, tours and airport pickups, delivering a polished, professional experience every time.",
-    languages: ["Bahasa Indonesia"],
+    languages: ["English", "Bahasa Indonesia"],
     images: [{ src: "/images/drivers/alan/portrait.webp", alt: "Alan — portrait" }],
   },
   {
@@ -93,7 +93,7 @@ export const drivers: Driver[] = [
     name: "Catur",
     phone: "+62 812-3615-3319",
     bio: "Catur brings a friendly, easygoing presence to every ride, always focused on a safe and comfortable trip.",
-    languages: ["Bahasa Indonesia"],
+    languages: ["English", "Bahasa Indonesia"],
     images: [{ src: "/images/drivers/catur/portrait.webp", alt: "Catur — portrait" }],
   },
   {
@@ -102,7 +102,7 @@ export const drivers: Driver[] = [
     name: "Alit",
     phone: "+62 895-4123-21033",
     bio: "Alit drives the larger group vehicles, known among guests for being a trusted, professional driver on every trip.",
-    languages: ["Bahasa Indonesia"],
+    languages: ["English", "Bahasa Indonesia"],
     images: [{ src: "/images/drivers/alit/portrait.webp", alt: "Alit — portrait" }],
   },
 ];
