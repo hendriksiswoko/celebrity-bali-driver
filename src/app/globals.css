@@ -1,8 +1,23 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #faf7fb;
+  --foreground: #241436;
+
+  /* Brand palette matched to the logo's magenta -> violet gradient. */
+  --color-brand-50: #f7f0fb;
+  --color-brand-100: #ecdbf6;
+  --color-brand-200: #d9b8ee;
+  --color-brand-400: #9b3fd6;
+  --color-brand-600: #6d21b8;
+  --color-brand-700: #4c1d80;
+  --color-brand-900: #2c1152;
+
+  --color-accent-300: #f9a8d4;
+  --color-accent-500: #d6266f;
+  --color-accent-600: #b31456;
+
+  --gradient-brand: linear-gradient(100deg, #e0245e 0%, #b3299e 45%, #7c3aed 100%);
 }
 
 @theme inline {
@@ -10,17 +25,48 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-brand-50: var(--color-brand-50);
+  --color-brand-100: var(--color-brand-100);
+  --color-brand-200: var(--color-brand-200);
+  --color-brand-400: var(--color-brand-400);
+  --color-brand-600: var(--color-brand-600);
+  --color-brand-700: var(--color-brand-700);
+  --color-brand-900: var(--color-brand-900);
+
+  --color-accent-300: var(--color-accent-300);
+  --color-accent-500: var(--color-accent-500);
+  --color-accent-600: var(--color-accent-600);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+.brand-gradient {
+  background-image: var(--gradient-brand);
+}
+
+@keyframes marquee-rtl {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  animation: marquee-rtl 40s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
 }
